@@ -19,3 +19,6 @@
 
 Makefile
 nbproject/*
+
+# Backups? That's what Git is for...
+*.bak

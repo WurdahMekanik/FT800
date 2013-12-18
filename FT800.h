@@ -21,7 +21,8 @@ extern unsigned short dli;
  */
 #define dl(cmd) wr32(RAM_DL + dli, cmd);dli += 4
 
-#define tr8(value)  SSPBUF = value;while(!SSPSTATbits.BF)
+int _dummy
+#define tr8(value)  SPI1BUF = value;while(!SPI1STATbits.SPITBE);_dummy = SPI1BUF
 #define tr16(value) tr8((value) & 0xFF);tr8(((value) >> 8) & 0xFF)
 #define tr32(value) tr16((value) & 0xFFFF);tr16(((value) >> 16) & 0xFFFF)
 

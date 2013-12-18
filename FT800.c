@@ -1,7 +1,5 @@
 #include "xc.h"
-
 #include "FT800.h"
-
 #include <string.h>
 
 unsigned short dli;
@@ -139,16 +137,13 @@ void cmd(ft_uint32_t command){
 #define CORERST 0x68
 
 inline void FT800_Init(){
-
     PIN_PD = 0;
     __delay_ms(20);
     PIN_PD = 1;
     __delay_ms(20);
 
     host_command(ACTIVE); //send host command "ACTIVE" to FT800
-
     host_command(CLKEXT); //send command to "CLKEXT" to FT800
-
     host_command(CLK48M); //send command to "CLKEXT" to FT800
 
     // Configure display registers - demonstration for WQVGA resolution
@@ -192,5 +187,4 @@ inline void FT800_Init(){
     wr8(REG_PCLK,5); // clock prescaler (0: disable, >0: 48MHz/pclock)
 
     cmd_wait();
-
 }

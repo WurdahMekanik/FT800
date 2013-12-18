@@ -21,13 +21,13 @@
 // section 4.2
 #define BITMAPS              1UL
 #define POINTS               2UL
-#define LINES               3UL
-#define LINE_STRIP          4UL
-#define EDGE_R              5UL
-#define EDGE_L              6UL
-#define EDGE_A              7UL
-#define EDGE_B              8UL
-#define RECTS               9UL
+#define LINES                3UL
+#define LINE_STRIP           4UL
+#define EDGE_R               5UL
+#define EDGE_L               6UL
+#define EDGE_A               7UL
+#define EDGE_B               8UL
+#define RECTS                9UL
 
 #define CMDBUF_SIZE          4096UL
 #define CMD_APPEND           4294967070UL
@@ -144,8 +144,6 @@
 #define RAM_REG              1057792UL
 #define RAM_CMD              1081344UL
 
-
-
 #define REG_ANALOG           1058104UL
 #define REG_ANA_COMP         1058160UL
 #define REG_CLOCK            1057800UL
@@ -232,7 +230,6 @@
 #define REG_VOL_PB           1057916UL
 #define REG_VOL_SOUND        1057920UL
 
-
 #define REPEAT               1UL
 #define REPLACE              2UL
 #define RGB332               4UL
@@ -246,7 +243,6 @@
 #define TOUCHMODE_ONESHOT    1UL
 #define ULAW_SAMPLES         1UL
 #define ZERO                 0UL
-
 
 #define VERTEX2F(x,y) ((1UL<<30)|(((x)&32767UL)<<15)|(((y)&32767UL)<<0))
 #define VERTEX2II(x,y,handle,cell) ((2UL<<30)|(((x)&511UL)<<21)|(((y)&511UL)<<12)|(((handle)&31UL)<<7)|(((cell)&127UL)<<0))
@@ -296,8 +292,7 @@
 /* FT800 font table structure */
 /* Font table address in ROM can be found by reading the address from 0xFFFFC location. */
 /* 16 font tables are present at the address read from location 0xFFFFC */
-typedef struct FT_Gpu_Fonts
-{
+typedef struct FT_Gpu_Fonts{
 	/* All the values are in bytes */
 	/* Width of each character font from 0 to 127 */
 	ft_uint8_t	FontWidth[FT_GPU_NUMCHAR_PERFONT];
@@ -315,7 +310,4 @@ typedef struct FT_Gpu_Fonts
 
 #endif /* #ifndef _FT_GPU_H_ */
 
-
 /* Nothing beyond this */
-
-
